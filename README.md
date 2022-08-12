@@ -41,3 +41,8 @@ You may use this like so using CURL on your linux server
 To check the status of the heartbut make a GET request to:
 `https://{server}/heartbeat-status/{uuid}`
 This will return 200 http status for "online" or 503 http status or "missing in action".
+
+#### Donation
+If you find use out of this script, consider buying me a coffee with Bitcoin or don't.
+
+BTC: 3QCnGKxMfak7WZurVpEGkCAxNPcpgDzDGj
