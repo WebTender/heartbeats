@@ -8,7 +8,6 @@ Heartbeak monitoring microservice for tracking if background processes stop resp
 Update your `.env` as required
 
 -   Set your MySQL / MariaDB credentials
--   Set your SMTP credentials (optional)
 -   Set your Slack or Discord webhooks (optional)
 
 Custom .env options
