@@ -3,6 +3,8 @@
 namespace App\Console;
 
 use App\Console\Commands\HeartbeatCreateCommand;
+use App\Console\Commands\HeartbeatDeleteCommand;
+use App\Console\Commands\HeartbeatShowCommand;
 use App\Console\Commands\ServeCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use Laravel\Lumen\Console\Kernel as ConsoleKernel;
@@ -16,6 +18,8 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         HeartbeatCreateCommand::class,
+        HeartbeatDeleteCommand::class,
+        HeartbeatShowCommand::class,
         ServeCommand::class,
     ];
 

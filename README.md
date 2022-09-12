@@ -13,8 +13,7 @@ Update your `.env` as required
 Custom .env options
 
 -   `ENABLE_LIST=true|false`
--   `ENABLE_CREATE=true|false`
--   `CREATE_API_KEY=RANDOM HASH HERE`
+-   `API_KEY=RANDOM HASH HERE`
 
 `php artisan migrate`
 
@@ -23,11 +22,13 @@ Service with nginx or for development:
 
 #### Create Heartbeats
 
-`curl https://{server}/heartbeat/create?name=XXX&description=YYYY&max_minutes=15`
+`curl https://{server}/heartbeat-create?name=XXX&description=YYYY&max_minutes=15&api_key=xxx`
 You will receive the UUID back for the heartbeat
-You may need to add `&api_key=xxx` from your .env's `CREATE_API_KEY` setting.
+You need to add `&api_key=xxx` from your .env's `API_KEY` setting.
 
 #### Delete Heartbeats
+
+`curl https://{server}/heartbeat-delete?uuid={uuid}&api_key=xxx`
 
 #### Use Heartbeats
 
@@ -42,6 +43,7 @@ To check the status of the heartbut make a GET request to:
 This will return 200 http status for "online" or 503 http status or "missing in action".
 
 #### Donation
+
 If you find use out of this script, consider buying me a coffee with Bitcoin or don't.
 
 BTC: 3QCnGKxMfak7WZurVpEGkCAxNPcpgDzDGj

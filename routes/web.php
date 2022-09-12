@@ -29,13 +29,13 @@ $router->get('/heartbeat-status/{uuid}', function ($uuid) use ($router) {
     return response($beat, $beat->isOnline() ? 200 : 503);
 });
 
-if (env('ENABLE_CREATE')) {
-    $router->get('/heartbeat-create', 'HeartbeatController@create');
+if (env('API_KEY')) {
+    $router->get('/api/heartbeat-create', 'HeartbeatController@create');
+    $router->get('/api/heartbeat-delete', 'HeartbeatController@delete');
 }
 
 if (env('ENABLE_LIST') || env('APP_DEBUG')) {
     $router->get('/list', function () use ($router) {
-        throw new Exception('Testing 212');
         return Heartbeat::paginate();
     });
 }
