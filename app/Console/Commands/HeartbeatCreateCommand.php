@@ -29,11 +29,14 @@ class HeartbeatCreateCommand extends Command
      */
     public function handle()
     {
-        $this->info(Heartbeat::create([
+        $beat = Heartbeat::create([
             'name' => $this->argument('name'),
             'description' => $this->option('description'),
             'max_minutes' => $this->argument('max_minutes'),
             'last_pinged_at' => Carbon::now(),
-        ])->url);
+        ]);
+        $this->info($beat->id);
+        $this->info($beat->url);
+        $this->info($beat->statusUrl);
     }
 }

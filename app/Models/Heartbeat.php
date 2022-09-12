@@ -50,4 +50,9 @@ class Heartbeat extends Model
     {
         return url('/heartbeat/' . $this->id);
     }
+
+    public function getStatusUrlAttribute()
+    {
+        return url('/heartbeat-status/' . $this->id);
+    }
 }
