@@ -17,7 +17,7 @@ Custom .env options
 
 `php artisan migrate`
 
-Service with nginx or for development:
+Serve with nginx or for development:
 `./up.sh`
 
 #### Create Heartbeats
